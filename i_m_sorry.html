@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Please Forgive me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 3rem;
+      color: #cc0000;
+    }
+
+    #forgiveModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background: #E0DFD5;
+      padding: 200px;
+      border-radius: 40px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background-color: #003F91;
+      color: white;
+    }
+
+    .no {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .flower {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      animation: fall 5s linear infinite;
+      z-index: 100;
+    }
+    .flower1 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      animation: fall 5s linear infinite;
+      z-index: 100;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    #flowerScene {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color: red">I'm really sorry...</h1>
+  <h2 style="color: whitesmoke">I know I made a mistake, and I'm really sorry for hurting you. Please give me another chance to make things right. ❤️</h2>
+  <h3 style="color: whitesmoke">Hey, First of all I am really really sorry for what I did. I should have seen your texts aur agar nhi bhi dekhta toh I should have told you ki mein Kahan busy hoon kya kr rha hoon I am really sorry. I don't think that you're exaggerating it, it's my fault and I accept it. I realise with time that I really don't know how to be in a relationship with anyone or how to keep people. You love me so much, you care for me a lot and still I hurted you, made you feel bad. Mein kabhi nhi chahta ki tum dukhi ho jaao ya tumhe bura lage kabhi bhi nhi. Mein nhi chahta ki mein kuch aisa karu jisse tum baar baar hurt ho jaao, I am very very sorry. I respect you a lot, please tum kabhi aisa mat socho ki you're begging to me for something, I would never want to make you feel that way. Mujhe ek dum se texts padhke nhi samajh mein aata ki mein kya reply karun, mera reaction bhi bhot late se aata hai, tum saamne hoti ho toh I know how to react par texts pe mujhe samajh nhi aata. Kaunsi baat serious hoke boli jaa rhi hai, kaunsi mazak mein , kaunsi dukh mein, I just cannot interpret(aisa mat sochna that I am giving excuses). Mujhe nhi aata yarr, mein seekhunga par tumhare liye, mein badlunga(mein yeh sab bas isliye nhi bol rha kyunki mujhe tumhe manana hai, I really mean it).  I am sorry ki mere kaaran tumko itna dard hua, stress hua. Mujhe please maaf kardo aur bas ek baar aur bharosa karlo mujhpe, mein seekhunga yarr, meri galtiyaan thodi please nazar andaaz kr do. Tum mat jaao please. Mein nhi chahta tum jaao mujhse dur, mujhe tumhara khayal rakhna hai, I can't trust anyone else for you and that's it. I want you, I need you with me, close to me always.</h3>
+  <div id="forgiveModal">
+    <div class="modal-content">
+      <h2>I'm really sorry </h2> 
+      <h2>I know it seems quite childish of me ki mein tumhe aise mana rha hoon but Please give me another chance to make things right. </h2> 
+      <h2>Please forgive me 🥺</h2>
+      <button class="btn yes" onclick="forgiveMe()">Yes</button>
+      <button class="btn no" onclick="alert('I have a message for you. Please don’t say no 😢')">No</button>
+    </div>
+  </div>
+
+  <div id="flowerScene"></div>
+
+  <script>
+    function forgiveMe() {
+      document.getElementById('forgiveModal').style.display = 'none';
+      generateSVGFlowers();
+      generateFlowers();
+    }
+
+    function generateFlowers() {
+      for (let i = 0; i < 50; i++) {
+        let flower = document.createElement('img');
+        let flower1 = document.createElement('img');
+        flower.src = "https://i.pinimg.com/736x/6e/e7/d1/6ee7d1e02c2be1407cea184743548cf2.jpg";
+        flower1.src= "https://i.pinimg.com/736x/9c/be/38/9cbe38a04723eeb9884007145718f221.jpg";
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.top = '-50px';
+        flower.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        flower1.className = 'flower';
+        flower1.style.left = Math.random() * 100 + 'vw';
+        flower1.style.top = '-50px';
+        flower1.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(flower);
+        document.body.appendChild(flower1);
+      }
+    }
+
+    function generateSVGFlowers() {
+        document.getElementById('flowerScene').innerHTML = `
+            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- White Daisy -->
+            <g transform="translate(100, 100)">
+                <!-- Curved Stem -->
+                <path d="M0 15 C 10 60, -10 100, 0 150" stroke="green" fill="none" stroke-width="4"/>
+                <!-- Leaves -->
+                <path d="M5 50 C 15 40, 25 60, 10 70 Z" fill="green"/>
+                <path d="M-5 90 C -15 80, -25 100, -10 110 Z" fill="green"/>
+                <!-- Center -->
+                <circle r="15" fill="yellow"/>
+                <!-- Petals -->
+                ${Array.from({ length: 12 }).map((_, i) => {
+                const angle = (i * 360 / 12) * (Math.PI / 180);
+                const x = Math.cos(angle) * 40;
+                const y = Math.sin(angle) * 40;
+                return `<ellipse cx="${x}" cy="${y}" rx="10" ry="20" fill="white" transform="rotate(${i * 30})"/>`;
+                }).join('')}
+            </g>
+
+            <!-- Sunflower -->
+            <g transform="translate(300, 100)">
+                <!-- Curved Stem -->
+                <path d="M0 20 C 15 70, -15 110, 0 160" stroke="green" fill="none" stroke-width="4"/>
+                <!-- Leaves -->
+                <path d="M7 60 C 17 50, 27 70, 12 80 Z" fill="green"/>
+                <path d="M-7 110 C -17 100, -27 120, -12 130 Z" fill="green"/>
+                <!-- Center -->
+                <circle r="20" fill="#5C3A21"/>
+                <!-- Petals -->
+                ${Array.from({ length: 20 }).map((_, i) => {
+                const angle = (i * 360 / 20) * (Math.PI / 180);
+                const x = Math.cos(angle) * 50;
+                const y = Math.sin(angle) * 50;
+                return `<ellipse cx="${x}" cy="${y}" rx="12" ry="25" fill="gold" transform="rotate(${i * 18})"/>`;
+                }).join('')}
+            </g>
+            </svg>
+        `;
+    }
+  </script>
+  <h3 style="color: whitesmoke">I am not physically present to give you flowers but above are two of your favourite flowers.</h3>
+  <h3 style="color: whitesmoke">Thank You for pressing yes meri jaan.</h3>
+</body>
+</html>
